@@ -5,675 +5,152 @@
       "first": "Dangelo",
       "last": "Leuschke",
       "email": "magentawolf14@gmail.com",
-      "address": "148 Bode Junction",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "October 3, 2016",
-      "balance": "6134.04"
+      "initial_balance": "613404"
     },
     {
       "id": 2,
       "first": "Herminia",
       "last": "Orn",
       "email": "Herminia.Orn@johnnie.info",
-      "address": "148 Bode Junction",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "October 3, 2016",
-      "balance": "9138.93"
+      "initial_balance": "913893"
     },
     {
       "id": 3,
       "first": "Johnnie",
       "last": "Block",
       "email": "Johnnie.Block@luther.net",
-      "address": "265 Gilberto Ways",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "March 21, 2021",
-      "balance": "5765.97"
+      "initial_balance": "576597"
     },
     {
       "id": 4,
       "first": "Romaine",
       "last": "Crist",
       "email": "Romaine.Crist@paige.net",
-      "address": "300 Cummerata Shore",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "June 9, 2015",
-      "balance": "1111.66"
+      "initial_balance": "111166"
     },
     {
       "id": 5,
       "first": "Demario",
       "last": "Purdy",
       "email": "Demario.Purdy@christiana.biz",
-      "address": "930 Davonte Cliff",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "April 20, 2017",
-      "balance": "588.62"
+      "initial_balance": "58862"
     },
     {
       "id": 6,
       "first": "Elouise",
       "last": "Homenick",
       "email": "yellowturtle93@gmail.com",
-      "address": "6775 Ewell Expressway",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "April 28, 2016",
-      "balance": "7655.64"
+      "initial_balance": "765564"
     },
     {
       "id": 7,
       "first": "Ofelia",
       "last": "Eichmann",
       "email": "Ofelia.Eichmann@colt.biz",
-      "address": "6690 Stracke Ferry",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "December 1, 2015",
-      "balance": "8685.12"
+      "initial_balance": "868512"
     },
     {
       "id": 8,
       "first": "Ned",
       "last": "Thiel",
       "email": "Ned.Thiel@alexzander.info",
-      "address": "912 Janet Flats",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "July 2, 2016",
-      "balance": "2185.87"
+      "initial_balance": "218587"
     },
     {
       "id": 9,
       "first": "Cheyanne",
       "last": "Ortiz",
       "email": "Cheyanne.Ortiz@anibal.net",
-      "address": "35951 Kohler Via",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "October 29, 2016",
-      "balance": "5608.75"
+      "initial_balance": "560875"
     },
     {
       "id": 10,
       "first": "Brady",
       "last": "Boehm",
       "email": "Brady.Boehm@bernie.net",
-      "address": "7215 Alfredo Divide",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "June 15, 2021",
-      "balance": "8760.73"
+      "initial_balance": "876073"
     },
     {
       "id": 11,
       "first": "Ellis",
       "last": "Heidenreich",
       "email": "salmonturtle02@gmail.com",
-      "address": "43499 Feeney Extension",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "July 12, 2019",
-      "balance": "8122.97"
+      "initial_balance": "812297"
     },
     {
       "id": 12,
       "first": "Frieda",
       "last": "Schultz",
       "email": "Frieda.Schultz@germaine.info",
-      "address": "090 Ebert Ports",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "April 11, 2023",
-      "balance": "4622.79"
+      "initial_balance": "462279"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "fromUserId": 1,
+      "toUserId": 2,
+      "amount": 15000,
+      "date": "2024-06-01T12:30:00Z"
     },
     {
-      "id": 13,
-      "first": "Nakia",
-      "last": "Hudson",
-      "email": "Nakia.Hudson@emie.biz",
-      "address": "29608 Rhett Burgs",
-      "created": "December 23, 2023",
-      "balance": "3684.51"
+      "id": 2,
+      "fromUserId": 4,
+      "toUserId": 12,
+      "amount": 1500,
+      "date": "2024-06-04T11:54:00Z"
     },
     {
-      "id": 14,
-      "first": "Yoshiko",
-      "last": "Stamm",
-      "email": "Yoshiko.Stamm@henderson.org",
-      "address": "17362 Mante Dam",
-      "created": "April 21, 2022",
-      "balance": "1685.11"
+      "id": 3,
+      "fromUserId": 2,
+      "toUserId": 1,
+      "amount": 7000,
+      "date": "2024-06-22T08:27:00Z"
     },
     {
-      "id": 15,
-      "first": "Tyra",
-      "last": "D'Amore",
-      "email": "Tyra.D'Amore@alessandra.com",
-      "address": "739 Hammes Shores",
-      "created": "April 10, 2018",
-      "balance": "1548.42"
+      "id": 4,
+      "fromUserId": 8,
+      "toUserId": 6,
+      "amount": 27000,
+      "date": "2024-07-06T14:03:26:00Z"
     },
     {
-      "id": 16,
-      "first": "Emily",
-      "last": "Dickinson",
-      "email": "Emily.Dickinson@ima.org",
-      "address": "199 Schmeler Mews",
-      "created": "October 23, 2020",
-      "balance": "7243.63"
+      "id": 5,
+      "fromUserId": 12,
+      "toUserId": 6,
+      "amount": 4000,
+      "date": "2024-06-25T20:35:18:00Z"
     },
     {
-      "id": 17,
-      "first": "Osvaldo",
-      "last": "Schneider",
-      "email": "turquoisewolf88@gmail.com",
-      "address": "0832 Pouros Brooks",
-      "created": "October 15, 2019",
-      "balance": "7145.33"
-    },
-    {
-      "id": 18,
-      "first": "Jillian",
-      "last": "Wunsch",
-      "email": "Jillian.Wunsch@emmett.net",
-      "address": "962 Regan Island",
-      "created": "September 9, 2019",
-      "balance": "8357.10"
-    },
-    {
-      "id": 19,
-      "first": "Kallie",
-      "last": "Paucek",
-      "email": "Kallie.Paucek@marjory.com",
-      "address": "32549 Roma Fields",
-      "created": "February 1, 2016",
-      "balance": "583.67"
-    },
-    {
-      "id": 20,
-      "first": "Therese",
-      "last": "Spencer",
-      "email": "purplerabbit04@gmail.com",
-      "address": "823 Bogisich Ford",
-      "created": "May 1, 2015",
-      "balance": "9751.64"
-    },
-    {
-      "id": 21,
-      "first": "Myrtis",
-      "last": "Kulas",
-      "email": "lavenderrabbit18@gmail.com",
-      "address": "62976 Hamill Ports",
-      "created": "May 25, 2024",
-      "balance": "9934.31"
-    },
-    {
-      "id": 22,
-      "first": "Mose",
-      "last": "Stracke",
-      "email": "olivefrog17@gmail.com",
-      "address": "485 Carroll Corner",
-      "created": "October 19, 2020",
-      "balance": "8469.05"
-    },
-    {
-      "id": 23,
-      "first": "Sherwood",
-      "last": "Muller",
-      "email": "Sherwood.Muller@maxwell.org",
-      "address": "1088 Hayes Throughway",
-      "created": "February 29, 2016",
-      "balance": "3137.00"
-    },
-    {
-      "id": 24,
-      "first": "Julien",
-      "last": "Steuber",
-      "email": "Julien.Steuber@johnathan.info",
-      "address": "24352 VonRueden Union",
-      "created": "March 31, 2023",
-      "balance": "7430.97"
-    },
-    {
-      "id": 25,
-      "first": "Mellie",
-      "last": "Gleichner",
-      "email": "Mellie.Gleichner@katelynn.com",
-      "address": "50615 Marlee Expressway",
-      "created": "June 5, 2020",
-      "balance": "8871.05"
-    },
-    {
-      "id": 26,
-      "first": "Barry",
-      "last": "Kirlin",
-      "email": "pinksquirrel21@gmail.com",
-      "address": "765 Armstrong Meadow",
-      "created": "July 8, 2018",
-      "balance": "685.09"
-    },
-    {
-      "id": 27,
-      "first": "Lenora",
-      "last": "Schroeder",
-      "email": "purplefrog39@gmail.com",
-      "address": "6272 Jazmyne Courts",
-      "created": "July 23, 2015",
-      "balance": "7732.61"
-    },
-    {
-      "id": 28,
-      "first": "Orin",
-      "last": "Rice",
-      "email": "greenfrog83@gmail.com",
-      "address": "10396 Wendy Spurs",
-      "created": "December 27, 2018",
-      "balance": "6000.43"
-    },
-    {
-      "id": 29,
-      "first": "Maiya",
-      "last": "Tremblay",
-      "email": "greenfrog25@gmail.com",
-      "address": "88347 Myrl Junction",
-      "created": "November 28, 2022",
-      "balance": "9075.62"
-    },
-    {
-      "id": 30,
-      "first": "Douglas",
-      "last": "Towne",
-      "email": "olivefrog10@gmail.com",
-      "address": "89971 Rutherford Ford",
-      "created": "October 26, 2019",
-      "balance": "3011.06"
-    },
-    {
-      "id": 31,
-      "first": "Brendon",
-      "last": "Steuber",
-      "email": "Brendon.Steuber@xavier.net",
-      "address": "308 Jaden Stravenue",
-      "created": "July 23, 2020",
-      "balance": "8228.65"
-    },
-    {
-      "id": 32,
-      "first": "Cleora",
-      "last": "Grant",
-      "email": "Cleora.Grant@brendan.biz",
-      "address": "08698 Valentin Park",
-      "created": "July 7, 2015",
-      "balance": "8581.04"
-    },
-    {
-      "id": 33,
-      "first": "Johathan",
-      "last": "Pollich",
-      "email": "azurewolf72@gmail.com",
-      "address": "45293 Conor Mount",
-      "created": "September 13, 2019",
-      "balance": "5055.29"
-    },
-    {
-      "id": 34,
-      "first": "Aida",
-      "last": "Rolfson",
-      "email": "yellowgiraffe22@gmail.com",
-      "address": "445 Chelsey Shore",
-      "created": "July 1, 2023",
-      "balance": "8527.14"
-    },
-    {
-      "id": 35,
-      "first": "Braxton",
-      "last": "Hauck",
-      "email": "azurewolf95@gmail.com",
-      "address": "5235 Rolfson Parkway",
-      "created": "June 12, 2016",
-      "balance": "236.28"
-    },
-    {
-      "id": 36,
-      "first": "Adan",
-      "last": "Gaylord",
-      "email": "blackrabbit67@gmail.com",
-      "address": "23661 Graham Forest",
-      "created": "November 4, 2023",
-      "balance": "5366.92"
-    },
-    {
-      "id": 37,
-      "first": "Thea",
-      "last": "Kuphal",
-      "email": "purplerabbit63@gmail.com",
-      "address": "7688 Kayden Knolls",
-      "created": "September 19, 2020",
-      "balance": "2646.59"
-    },
-    {
-      "id": 38,
-      "first": "Bernie",
-      "last": "Grady",
-      "email": "azurefrog66@gmail.com",
-      "address": "779 Borer Parkways",
-      "created": "April 22, 2015",
-      "balance": "7168.68"
-    },
-    {
-      "id": 39,
-      "first": "Teagan",
-      "last": "Barton",
-      "email": "plumfrog39@gmail.com",
-      "address": "8476 Heller Center",
-      "created": "May 5, 2023",
-      "balance": "8302.92"
-    },
-    {
-      "id": 40,
-      "first": "Giovanna",
-      "last": "Ritchie",
-      "email": "whitewolf03@gmail.com",
-      "address": "829 Gussie Square",
-      "created": "July 19, 2020",
-      "balance": "7546.14"
-    },
-    {
-      "id": 41,
-      "first": "Elton",
-      "last": "Bode",
-      "email": "Elton.Bode@drew.name",
-      "address": "173 Olaf Circle",
-      "created": "June 7, 2020",
-      "balance": "3027.16"
-    },
-    {
-      "id": 42,
-      "first": "Lenora",
-      "last": "MacGyver",
-      "email": "Lenora.MacGyver@colleen.com",
-      "address": "22017 Lincoln Mount",
-      "created": "October 5, 2018",
-      "balance": "1620.36"
-    },
-    {
-      "id": 43,
-      "first": "Damion",
-      "last": "Wehner",
-      "email": "Damion.Wehner@lloyd.name",
-      "address": "734 Andreane Rue",
-      "created": "May 15, 2019",
-      "balance": "9380.81"
-    },
-    {
-      "id": 44,
-      "first": "Kian",
-      "last": "Mayer",
-      "email": "Kian.Mayer@hollis.biz",
-      "address": "45652 Garry Hollow",
-      "created": "June 3, 2015",
-      "balance": "6401.52"
-    },
-    {
-      "id": 45,
-      "first": "Torrey",
-      "last": "Kuhn",
-      "email": "plumsquirrel37@gmail.com",
-      "address": "9778 Walker Lights",
-      "created": "May 4, 2024",
-      "balance": "9814.73"
-    },
-    {
-      "id": 46,
-      "first": "Robbie",
-      "last": "Heathcote",
-      "email": "Robbie.Heathcote@josue.org",
-      "address": "58946 Vincent Fords",
-      "created": "October 23, 2016",
-      "balance": "820.68"
-    },
-    {
-      "id": 47,
-      "first": "Jabari",
-      "last": "Runte",
-      "email": "Jabari.Runte@antonia.biz",
-      "address": "07286 Drake Ford",
-      "created": "February 21, 2016",
-      "balance": "2880.19"
-    },
-    {
-      "id": 48,
-      "first": "Elaina",
-      "last": "Pagac",
-      "email": "Elaina.Pagac@wilfrid.org",
-      "address": "77933 Molly Turnpike",
-      "created": "April 25, 2016",
-      "balance": "8272.88"
-    },
-    {
-      "id": 49,
-      "first": "Stephany",
-      "last": "King",
-      "email": "salmonfrog34@gmail.com",
-      "address": "99368 Golden Ranch",
-      "created": "December 16, 2014",
-      "balance": "2040.95"
-    },
-    {
-      "id": 50,
-      "first": "Freeda",
-      "last": "McClure",
-      "email": "tanfrog06@gmail.com",
-      "address": "431 Kayden Viaduct",
-      "created": "March 15, 2017",
-      "balance": "8961.25"
-    },
-    {
-      "id": 51,
-      "first": "Hermina",
-      "last": "Walter",
-      "email": "lavenderfrog16@gmail.com",
-      "address": "33015 Rippin Turnpike",
-      "created": "March 5, 2017",
-      "balance": "8637.37"
-    },
-    {
-      "id": 52,
-      "first": "Jacey",
-      "last": "Tillman",
-      "email": "Jacey.Tillman@joey.org",
-      "address": "692 Volkman Inlet",
-      "created": "January 26, 2023",
-      "balance": "7339.33"
-    },
-    {
-      "id": 53,
-      "first": "Amaya",
-      "last": "Gulgowski",
-      "email": "fuchsiasquirrel71@gmail.com",
-      "address": "135 Wava Viaduct",
-      "created": "June 10, 2016",
-      "balance": "5700.23"
-    },
-    {
-      "id": 54,
-      "first": "Rollin",
-      "last": "Stamm",
-      "email": "tanwolf94@gmail.com",
-      "address": "1440 Terence Loaf",
-      "created": "January 18, 2023",
-      "balance": "2252.23"
-    },
-    {
-      "id": 55,
-      "first": "Reed",
-      "last": "Okuneva",
-      "email": "Reed.Okuneva@carroll.net",
-      "address": "872 Koelpin Vista",
-      "created": "May 5, 2019",
-      "balance": "6947.21"
-    },
-    {
-      "id": 56,
-      "first": "Dorthy",
-      "last": "Ortiz",
-      "email": "azurerabbit84@gmail.com",
-      "address": "8842 Lesch Track",
-      "created": "November 16, 2019",
-      "balance": "2560.79"
-    },
-    {
-      "id": 57,
-      "first": "Rhoda",
-      "last": "Mraz",
-      "email": "Rhoda.Mraz@sim.name",
-      "address": "8418 Tony Plaza",
-      "created": "March 21, 2022",
-      "balance": "8188.61"
-    },
-    {
-      "id": 58,
-      "first": "Kimberly",
-      "last": "Flatley",
-      "email": "Kimberly.Flatley@pietro.biz",
-      "address": "729 Dickinson Route",
-      "created": "October 5, 2019",
-      "balance": "3346.52"
-    },
-    {
-      "id": 59,
-      "first": "Tony",
-      "last": "Bogan",
-      "email": "Tony.Bogan@theresia.biz",
-      "address": "326 Hickle Forge",
-      "created": "July 7, 2017",
-      "balance": "642.62"
-    },
-    {
-      "id": 60,
-      "first": "Gonzalo",
-      "last": "Herzog",
-      "email": "cyanrabbit58@gmail.com",
-      "address": "18990 Krajcik Tunnel",
-      "created": "October 28, 2023",
-      "balance": "1413.84"
-    },
-    {
-      "id": 61,
-      "first": "Valerie",
-      "last": "Walker",
-      "email": "Valerie.Walker@lafayette.org",
-      "address": "743 Keagan Pass",
-      "created": "September 29, 2016",
-      "balance": "6990.31"
-    },
-    {
-      "id": 62,
-      "first": "Dillon",
-      "last": "Wiegand",
-      "email": "Dillon.Wiegand@leonie.com",
-      "address": "539 Robbie Hill",
-      "created": "May 10, 2015",
-      "balance": "2571.80"
-    },
-    {
-      "id": 63,
-      "first": "Coralie",
-      "last": "Jacobson",
-      "email": "Coralie.Jacobson@hilda.biz",
-      "address": "183 Hartmann Harbor",
-      "created": "March 13, 2018",
-      "balance": "814.60"
-    },
-    {
-      "id": 64,
-      "first": "Geoffrey",
-      "last": "Beier",
-      "email": "azurewolf29@gmail.com",
-      "address": "991 Belle Island",
-      "created": "August 14, 2018",
-      "balance": "4607.78"
-    },
-    {
-      "id": 65,
-      "first": "Jamel",
-      "last": "Witting",
-      "email": "Jamel.Witting@angelo.com",
-      "address": "10635 Schoen Dam",
-      "created": "November 14, 2020",
-      "balance": "8958.90"
-    },
-    {
-      "id": 66,
-      "first": "Abbey",
-      "last": "Monahan",
-      "email": "Abbey.Monahan@kennedi.name",
-      "address": "0242 McDermott Groves",
-      "created": "May 13, 2019",
-      "balance": "2194.53"
-    },
-    {
-      "id": 67,
-      "first": "Brock",
-      "last": "Morissette",
-      "email": "Brock.Morissette@gina.org",
-      "address": "801 Daugherty Prairie",
-      "created": "April 16, 2021",
-      "balance": "4535.40"
-    },
-    {
-      "id": 68,
-      "first": "Nicklaus",
-      "last": "Labadie",
-      "email": "Nicklaus.Labadie@marcelle.name",
-      "address": "847 Ansley Crescent",
-      "created": "April 9, 2020",
-      "balance": "8237.77"
-    },
-    {
-      "id": 69,
-      "first": "Rodger",
-      "last": "Schamberger",
-      "email": "Rodger.Schamberger@robyn.org",
-      "address": "8338 Goyette Green",
-      "created": "March 23, 2021",
-      "balance": "5868.68"
-    },
-    {
-      "id": 70,
-      "first": "Mariane",
-      "last": "Halvorson",
-      "email": "purpleturtle71@gmail.com",
-      "address": "448 Dooley Street",
-      "created": "November 2, 2022",
-      "balance": "6765.08"
-    },
-    {
-      "id": 71,
-      "first": "Cade",
-      "last": "Davis",
-      "email": "tangiraffe66@gmail.com",
-      "address": "10156 Marks Junctions",
-      "created": "December 26, 2022",
-      "balance": "8538.15"
-    },
-    {
-      "id": 72,
-      "first": "David",
-      "last": "Schuppe",
-      "email": "blackfrog10@gmail.com",
-      "address": "0833 Ilene Greens",
-      "created": "October 20, 2019",
-      "balance": "7247.91"
-    },
-    {
-      "id": 73,
-      "first": "Marielle",
-      "last": "Reynolds",
-      "email": "ivorygiraffe64@gmail.com",
-      "address": "182 Koss Summit",
-      "created": "November 24, 2023",
-      "balance": "6811.99"
-    },
-    {
-      "id": 74,
-      "first": "Cleta",
-      "last": "Dietrich",
-      "email": "lavenderturtle78@gmail.com",
-      "address": "18846 Grady Bypass",
-      "created": "July 9, 2015",
-      "balance": "9666.42"
-    },
-    {
-      "id": 75,
-      "first": "Lillie",
-      "last": "Nolan",
-      "email": "Lillie.Nolan@caleigh.org",
-      "address": "7810 Jast Mountains",
-      "created": "June 6, 2021",
-      "balance": "6440.62"
+      "id": 6,
+      "fromUserId": 11,
+      "toUserId": 2,
+      "amount": 41000,
+      "date": "2024-06-25T20:35:18:00Z"
     }
   ]
 }

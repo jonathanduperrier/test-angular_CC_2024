@@ -1,0 +1,4 @@
+{
+  "/users*": "/660/users$1",
+  "/transactions*": "/660/transactions$1"
+}
