@@ -1,0 +1,22 @@
+<h1>Page d'authentification</h1>
+<h2>
+  Le mot de passe pour les utilisateurs déjà existants en base est "<em>{{
+    userPassword
+  }}</em
+  >"
+</h2>
+<div>
+  <p>
+    <input #email id="email" placeholder="Email" type="text" />
+  </p>
+  <p>
+    <input #password id="password" placeholder="Mot de passe" type="password" />
+  </p>
+</div>
+
+<p>
+  <button (click)="signIn()">Se connecter</button>
+</p>
+<p>
+  <button (click)="register()">Créer un compte</button>
+</p>
