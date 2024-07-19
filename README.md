@@ -2,11 +2,11 @@
 
 Projet généré avec [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
 
-## Build
+## Construction du livrable
 
 Lancer la commande `ng build` pour construire le projet. L'artifact généré se trouvera dans le répertoire `dist/`.
 
-## Running unit tests
+## Lancement des tests unitaires
 
 Lancer la commande `ng test` pour exécuter les tests unitaires via [Karma](https://karma-runner.github.io).
 
@@ -42,19 +42,19 @@ classDiagram
   class User {
     id : identifiant (entier)
     email
-    password 
+    password
     initialBalance : solde initial,\nen centimes d'euros
   }
 
   class Transaction {
     id : identifiant (entier)
-    userId : émetteur de la transaction
+    fromUserId : émetteur de la transaction
     toUserId : destinataire de la transaction
     amount : montant en centimes d'euros
     date : au format ISO 8601, fuseau UTC
   }
 
-  Transaction "*" --> "1" User : userId
+  Transaction "*" --> "1" User : fromUserId
   Transaction "*" --> "1" User : toUserId
 ```
 
@@ -71,14 +71,19 @@ La commande `npm run start` lance l'application.
 
 - Le client est disponible sur <http://localhost:4200/>
 - L'API est disponible sur <http://localhost:3000/>
-- Les opérations suivantes sont disponibles :
+- Les opérations suivantes sont disponibles pour tous les utilisateurs:
   - POST /login
-  - GET /user
+  - POST /register
+  
+
+- Les opérations suivantes sont disponibles pour les utilisateurs connectés uniquement:
+  - GET /users
   - GET /users/:id
   - GET /transactions
-  - POST /transactions
+  - POST /transactions/:id
 
 Fonctionnement de l'API d'authentification : <https://www.npmjs.com/package/json-server-auth>
+
 Fonctionnement des API métiers : <https://www.npmjs.com/package/json-server>
 
 L'application se rechargera automatiquement en cas de changement du code source.
@@ -90,7 +95,7 @@ Chaque décision doit pouvoir se justifier.**
 
 ### [code] Intégrer l'authentification
 
-L'utilisateur doit pouvoir s'authentifier auprès du service à l'aide de son adresse émail et de son mot de passe afin de pouvoir utiliser les API.
+L'utilisateur doit pouvoir s'authentifier auprès du service à l'aide de son adresse email et de son mot de passe afin de pouvoir utiliser les API.
 
 ⚠️Il est impératif que le token JWT récupéré suite à l'authentification soit protégé contre toute attaque (XSS, CSRF, etc) : implémenter les mesures de sécurité côté Angular et indiquer toute autre mesure utile externe.
 
@@ -103,14 +108,14 @@ L'application doit respecter le [Design System de l’État](https://www.systeme
 Implémenter les fonctionnalités suivantes :
 
 - Pour l'usager anonyme :
-  - Formulaire d'authentification, et bouton de déconnexion
+  - Formulaire d'authentification et bouton de connexion
 - Pour l'usager authentifié :
   - Affichage de son compte, avec notamment :
-    - Son adresse émail, accessible dans le contenu de l'access token JWT
+    - Son adresse email, accessible dans le contenu de l'access token JWT
     - Son solde à jour, calculé à partir de son solde initial et des transactions
     - La liste de toutes les transactions qui le concernent (en débit et en crédit), avec tri, filtres et pagination
   - Soumission d'une nouvelle transaction, à partir de l'adresse email du destinataire, avec vérification de suffisance du solde de l'émetteur
-  - Un menu pour aux deux fonctions précédentes
+  - Un menu correspondant aux deux fonctions précédentes
 
 ### [code] Tests unitaires
 
