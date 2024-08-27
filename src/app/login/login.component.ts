@@ -26,6 +26,7 @@ export class LoginComponent {
         password: this.passwordInput.nativeElement.value,
       })
       .subscribe((returnValue) => {
+        console.log("returnValue : ");
         console.log(returnValue);
       });
   }
