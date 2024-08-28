@@ -18,7 +18,7 @@ export class LoginComponent {
   signIn() {
     // Code pour se connecter et rediriger vers la page correspondant au composant UserComponent.
     const loginURL = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
-    alert('Clic sur le bouton de connexion');
+    console.log('Clic sur le bouton de connexion');
 
     this.http
       .post(loginURL, {
@@ -28,6 +28,8 @@ export class LoginComponent {
       .subscribe((returnValue) => {
         console.log("returnValue : ");
         console.log(returnValue);
+        localStorage.setItem('token', JSON.stringify(returnValue));
+        console.log(localStorage.getItem('token'));
       });
   }
 
