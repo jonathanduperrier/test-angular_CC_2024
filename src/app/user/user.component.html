@@ -1,5 +1,10 @@
-<h1>Afficher les informations de l'utilisateur connecté</h1>
+<h1>Informations de l'utilisateur</h1>
 <div class="fr-btn" (click)="logout()"> Déconnexion </div>
 <p>
-    <strong>Nom :</strong>
+    <strong>Nom : </strong>
+    {{objToken.user.last}}<br />
+    <strong>Prénom : </strong>
+    {{objToken.user.first}}<br />
+    <strong>E-Mail : </strong>
+    {{decodedToken.email}}<br />
 </p>

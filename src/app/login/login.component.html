@@ -2,21 +2,22 @@
 <h2>
   Le mot de passe pour les utilisateurs déjà existants en base est "<em>{{
     userPassword
-  }}</em
-  >"
+  }}</em>"
 </h2>
 <div>
   <p>
-    <input #email id="email" placeholder="Email" type="text" />
+    <label class="fr-label" for="email">E-Mail : </label>
+    <input class="fr-input" #email id="email" placeholder="Email" type="text" />
   </p>
   <p>
-    <input #password id="password" placeholder="Mot de passe" type="password" />
+    <label class="fr-label" for="password">Mot de passe : </label>
+    <input class="fr-input" #password id="password" placeholder="Mot de passe" type="password" />
   </p>
 </div>
 
 <p>
-  <button (click)="signIn()">Se connecter</button>
+  <button class="fr-btn" (click)="signIn()" [routerLink]="['/user']">Se connecter</button>
 </p>
 <p>
-  <button (click)="register()">Créer un compte</button>
+  <button class="fr-btn" (click)="register()">Créer un compte</button>
 </p>

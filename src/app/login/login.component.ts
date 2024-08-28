@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { ENVIRONNEMENT } from '@environments/environment';
 import { PASSWORD } from '@app/core/constants/apps';
 
@@ -14,7 +15,7 @@ export class LoginComponent {
 
   readonly userPassword = PASSWORD;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   signIn() {
     // Code pour se connecter et rediriger vers la page correspondant au composant UserComponent.
     const loginURL = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
@@ -25,12 +26,16 @@ export class LoginComponent {
         email: this.emailInput.nativeElement.value,
         password: this.passwordInput.nativeElement.value,
       })
-      .subscribe((returnValue) => {
-        console.log("returnValue : ");
-        console.log(returnValue);
-        localStorage.setItem('token', JSON.stringify(returnValue));
-        console.log(localStorage.getItem('token'));
-      });
+      .subscribe(
+        (returnValue) => {
+          console.log("returnValue : ");
+          console.log(returnValue);
+          localStorage.setItem('token', JSON.stringify(returnValue));
+          console.log(localStorage.getItem('token'));
+          this.router.navigate(['/user']);
+        },
+        (err) => alert('HTTP Error : ' + err.error)
+      );
   }
 
   register() {

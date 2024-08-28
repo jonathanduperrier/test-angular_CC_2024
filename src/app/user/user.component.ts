@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@app/services/auth/auth.service';
+import { jwtDecode } from "jwt-decode";
+
 
 @Component({
   selector: 'app-user',
@@ -7,19 +10,25 @@ import { AuthService } from '@app/services/auth/auth.service';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent {
-  constructor() {
+  public token:string = '';
+  public objToken:any = [];
+  public decodedToken:any = [];
 
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    let token = localStorage.getItem('token');
-    //let objToken = JSON.parse(token);
+    this.token = localStorage.getItem('token');
+    this.objToken = JSON.parse(this.token);
+    this.decodedToken = jwtDecode(this.token);
     console.log("token : ");
-    console.log(token);
+    console.log(this.token);
+    console.log(this.objToken);
+    console.log(this.decodedToken);
   }
 
   logout(): void {
     localStorage.removeItem('token');
+    this.router.navigate(['/']);
   }
 }
 
