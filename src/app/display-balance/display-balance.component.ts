@@ -11,8 +11,7 @@ import { Transaction } from '@app/models/transaction.model';
   styleUrls: ['./display-balance.component.scss']
 })
 export class DisplayBalanceComponent {
-  selectedData: Subscription;
-
+  private selectedData: Subscription;
   @Input() userId:string;
   public currency = ENVIRONNEMENT.currency;
   public initialBalance:number = 0;
