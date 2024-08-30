@@ -1,1 +1,25 @@
-<p>lst-transacts works! {{userId}}</p>
+<table class="fr-table fr-mt-3w">
+    <thead>
+      <tr>
+        <!-- <th (click)="sortData('name')">Nom</th>
+        <th (click)="sortData('age')">Âge</th>
+        <th (click)="sortData('email')">Email</th> -->
+        <th>Type</th>
+        <th>Date</th>
+        <th>Montant</th>
+        <th>Provenance ou destinataire</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of lstTransactsDisplay">
+        <td>{{ item.type }}</td>
+        <td>{{ convertToLocalTime(item.date) }}</td>
+        <td>{{ item.amount }}</td>
+        <td>
+            <ng-container *ngIf="item.type === 'crédit'">En Provenance de </ng-container>
+            <ng-container *ngIf="item.type === 'débit'">A destination de </ng-container>
+            {{ item.first }} {{item.last}}
+        </td>
+      </tr>
+    </tbody>
+  </table>

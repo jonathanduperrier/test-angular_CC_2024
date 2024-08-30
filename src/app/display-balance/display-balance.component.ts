@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 import { AccessDbService } from '@app/services/access_db/access-db.service';
 import { ENVIRONNEMENT } from '@environments/environment';
 import { User } from '@app/models/user.model';
-import { Transaction } from '@app/models/transaction.model';
 
 @Component({
   selector: 'app-display-balance',
