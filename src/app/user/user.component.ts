@@ -17,7 +17,7 @@ export class UserComponent {
   public lastName:string = '';
   public firstName:string = '';
   public eMail:string = '';
-  public SafeHtml!: SafeHtml;
+  public SafeHtmlUserInfo!: SafeHtml;
 
   constructor(private router: Router, private encrypt: EncryptService, private sanitizer: DomSanitizer) {}
 
@@ -29,18 +29,15 @@ export class UserComponent {
     this.lastName = this.objToken.user.last;
     this.eMail = this.decodedToken.email;
 
-    this.SafeHtml = this.sanitizer.bypassSecurityTrustHtml('\
-    <strong>Nom : </strong>\
-    '+ this.lastName +'<br />\
-    <strong>Prénom : </strong>\
-    '+ this.firstName +'<br />\
-    <strong>E-Mail : </strong>\
-    '+ this.eMail +'<br />');
-
-    console.log("token : ");
-    console.log(this.token);
-    console.log(this.objToken);
-    console.log(this.decodedToken);
+    this.SafeHtmlUserInfo = this.sanitizer.bypassSecurityTrustHtml('\
+    <ul>\
+    <li><strong>Nom : </strong>\
+    '+ this.lastName +'</li>\
+    <li><strong>Prénom : </strong>\
+    '+ this.firstName +'</li>\
+    <li><strong>E-Mail : </strong>\
+    '+ this.eMail +'</li>\
+    </ul>');
   }
 
   logout(): void {

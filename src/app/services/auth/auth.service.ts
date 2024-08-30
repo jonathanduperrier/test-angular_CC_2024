@@ -11,8 +11,6 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     const token = this.encrypt.decrypt(localStorage.getItem('token'));
-    console.log("token : ");
-    console.log(token);
     // Ajoutez ici la logique pour vérifier la validité du token
     return token ? !this.isTokenExpired(token) : false;
   }
@@ -29,8 +27,6 @@ export class AuthService {
 
   isTokenExpired(token: string): boolean {
     const expirationDate = this.getTokenExpirationDate(token);
-    console.log("exp date token : ");
-    console.log(expirationDate);
     return expirationDate ? expirationDate < new Date() : false;
   }
 

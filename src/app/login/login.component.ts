@@ -29,12 +29,7 @@ export class LoginComponent {
       })
       .subscribe(
         (returnValue) => {
-          console.log("returnValue : ");
-          console.log(returnValue);
           localStorage.setItem('token', this.encrypt.encrypt(JSON.stringify(returnValue)));
-          //res.cookie('token', returnValue, { httpOnly: true, secure: true });
-
-          console.log(this.encrypt.decrypt((localStorage.getItem('token'))));
           this.router.navigate(['/user']);
         },
         (err) => alert('HTTP Error : ' + err.error)
