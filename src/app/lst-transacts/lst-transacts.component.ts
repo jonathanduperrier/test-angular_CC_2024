@@ -21,12 +21,22 @@ export class LstTransactsComponent {
   lstTransactsCredit:any;
   lstTransactsDisplay:TransactDisplay[] = [];
 
+  filteredList: any[] = [];
+  paginatedList: any[] = [];
+  currentPage: number = 1;
+  itemsPerPage: number = 10;
+  searchTerm: string = '';
+  sortColumn: string = '';
+  sortOrder: boolean = true; // true pour asc, false pour desc
+
   constructor(
     private accessDbService: AccessDbService,
   ){ }
   
   ngOnInit() {
     this.displayTransacts();
+    //this.applyFilter();
+    this.paginatedList = this.lstTransactsDisplay;
   }
 
   ngOnDestroy() {
@@ -35,7 +45,6 @@ export class LstTransactsComponent {
 
   private displayTransacts() {
     this.selectedData = this.accessDbService.getData().subscribe(data => {
-      let currentUser:User = data.users.find(i => i.id === this.userId);
       this.lstTransactsDebit = this.getTransactsDebit(this.userId, data.transactions);
       this.lstTransactsCredit = this.getTransactsCredit(this.userId, data.transactions);
       this.lstTransactsDebit.forEach(td => {
@@ -46,17 +55,16 @@ export class LstTransactsComponent {
         let userDestination:User = data.users.find(i => i.id === td.toUserId);
         this.lstTransactsDisplay.push({"id":td.id,"type":"crédit", "amount": td.amount, "date": td.date, "first": userDestination.first, "last": userDestination.last});
       });
-      console.log(this.lstTransactsDisplay);
     });
   }
 
   private getTransactsDebit(user:string, transacts:any) {
-    let lstTransactsDebit:User = transacts.filter(i => i.fromUserId === this.userId);
+    let lstTransactsDebit:User = transacts.filter(i => i.fromUserId === user);
     return lstTransactsDebit;
   }
 
   private getTransactsCredit(user:string, transacts:any) {
-    let lstTransactsCredit:User = transacts.filter(i => i.toUserId === this.userId);
+    let lstTransactsCredit:User = transacts.filter(i => i.toUserId === user);
     return lstTransactsCredit;
   }
 
@@ -65,6 +73,61 @@ export class LstTransactsComponent {
     const timeZone = ENVIRONNEMENT.timeZone;
     const zonedDate = toZonedTime(date, timeZone);
     return format(zonedDate, 'EEEE d MMMM yyyy à HH:mm', { timeZone, locale: fr });
+  }
+
+  /* Fonctions de gestion de la pagination */
+  public applyFilter(): void {
+    this.filteredList = this.lstTransactsDisplay.filter(item => {
+      return item.type.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+             item.first.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+             item.first.toLowerCase().includes(this.searchTerm.toLowerCase());
+    });
+    this.applySort();
+  }
+
+  private applySort(): void {
+    if (this.sortColumn) {
+      this.filteredList.sort((a, b) => {
+        const aValue = a[this.sortColumn];
+        const bValue = b[this.sortColumn];
+        return (aValue > bValue ? 1 : -1) * (this.sortOrder ? 1 : -1);
+      });
+    }
+    this.paginate();
+  }
+
+  private paginate(): void {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.paginatedList = this.filteredList.slice(startIndex, endIndex);
+  }
+
+  public sortData(column: string): void {
+    if (this.sortColumn === column) {
+      this.sortOrder = !this.sortOrder; // Inverser l'ordre si c'est la même colonne
+    } else {
+      this.sortColumn = column;
+      this.sortOrder = true;
+    }
+    this.applySort();
+  }
+
+  public previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.paginate();
+    }
+  }
+
+  public nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.paginate();
+    }
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.filteredList.length / this.itemsPerPage);
   }
 
 }

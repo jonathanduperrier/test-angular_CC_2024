@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { DisplayBalanceComponent } from './display-balance/display-balance.component';
 import { LstTransactsComponent } from './lst-transacts/lst-transacts.component';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [AppComponent, UserComponent, LoginComponent, DisplayBalanceComponent, LstTransactsComponent],
@@ -17,6 +18,7 @@ import { LstTransactsComponent } from './lst-transacts/lst-transacts.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent],

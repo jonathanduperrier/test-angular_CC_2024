@@ -1,25 +1,48 @@
-<table class="fr-table fr-mt-3w">
-    <thead>
-      <tr>
-        <!-- <th (click)="sortData('name')">Nom</th>
-        <th (click)="sortData('age')">Âge</th>
-        <th (click)="sortData('email')">Email</th> -->
-        <th>Type</th>
-        <th>Date</th>
-        <th>Montant</th>
-        <th>Provenance ou destinataire</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of lstTransactsDisplay">
-        <td>{{ item.type }}</td>
-        <td>{{ convertToLocalTime(item.date) }}</td>
-        <td>{{ item.amount/100 | currency: currency: 'symbol':'1.2-2':'fr' }}</td>
-        <td>
-            <ng-container *ngIf="item.type === 'crédit'">En Provenance de </ng-container>
-            <ng-container *ngIf="item.type === 'débit'">A destination de </ng-container>
-            {{ item.first }} {{item.last}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<section class="fr-container">
+    <header>
+      <h2>Liste des transactions</h2>
+    </header>
+  
+    <!-- Filtre de recherche -->
+    <div class="fr-input-group">
+      <label for="search" class="fr-label">Rechercher</label>
+      <input type="text" id="search" [(ngModel)]="searchTerm" (input)="applyFilter()" class="fr-input">
+    </div>
+
+    <!-- Tableau -->
+    <table class="fr-table fr-mt-3w">
+        <thead>
+        <tr>
+            <!-- <th (click)="sortData('name')">Nom</th>
+            <th (click)="sortData('age')">Âge</th>
+            <th (click)="sortData('email')">Email</th> -->
+            <th (click)="sortData('type')">Type</th>
+            <th (click)="sortData('date')">Date</th>
+            <th (click)="sortData('amount')">Montant</th>
+            <th>Provenance ou destinataire (Filtre : 
+                <span (click)="sortData('first')">PRENOM</span> / 
+                <span (click)="sortData('last')">NOM</span>)
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of paginatedList">
+            <td>{{ item.type }}</td>
+            <td>{{ convertToLocalTime(item.date) }}</td>
+            <td>{{ item.amount/100 | currency: currency: 'symbol':'1.2-2':'fr' }}</td>
+            <td>
+                <ng-container *ngIf="item.type === 'crédit'">En Provenance de </ng-container>
+                <ng-container *ngIf="item.type === 'débit'">A destination de </ng-container>
+                {{ item.first }} {{item.last}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="fr-pagination fr-mt-3w">
+        <button (click)="previousPage()" [disabled]="currentPage === 1" class="fr-pagination__link">Précédent</button>
+        <span>{{ currentPage }} / {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="fr-pagination__link">Suivant</button>
+    </div>
+</section>

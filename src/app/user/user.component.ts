@@ -32,7 +32,7 @@ export class UserComponent {
     this.displayUserInfoFromToken();
   }
 
-  private displayUserInfoFromToken() {
+  private displayUserInfoFromToken(): void {
     this.token = this.encrypt.decrypt(localStorage.getItem('token'));
     this.objToken = JSON.parse(this.token);
     this.decodedToken = jwtDecode(this.token);

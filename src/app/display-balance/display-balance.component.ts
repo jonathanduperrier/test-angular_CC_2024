@@ -28,7 +28,7 @@ export class DisplayBalanceComponent {
     this.selectedData.unsubscribe();
   }
 
-  private displayBalance() {
+  private displayBalance():void {
     this.selectedData = this.accessDbService.getData().subscribe(data => {
       let currentUser:User = data.users.find(i => i.id === this.userId);
       this.initialBalance = Number(currentUser.initial_balance);
