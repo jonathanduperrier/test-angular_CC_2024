@@ -10,6 +10,7 @@ export const ENVIRONNEMENT = {
   baseUrl: 'http://localhost:3000/',
   urls: URLS,
   currency: 'EUR',
+  timeZone: 'Europe/Paris',
 };
 
 /*

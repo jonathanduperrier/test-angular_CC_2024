@@ -62,8 +62,7 @@ export class LstTransactsComponent {
 
   public convertToLocalTime(dateString: string): string {
     const date = new Date(dateString);
-    //const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const timeZone = 'Europe/Paris';
+    const timeZone = ENVIRONNEMENT.timeZone;
     const zonedDate = toZonedTime(date, timeZone);
     return format(zonedDate, 'EEEE d MMMM yyyy à HH:mm', { timeZone, locale: fr });
   }

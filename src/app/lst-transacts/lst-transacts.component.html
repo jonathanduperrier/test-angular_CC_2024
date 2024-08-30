@@ -14,7 +14,7 @@
       <tr *ngFor="let item of lstTransactsDisplay">
         <td>{{ item.type }}</td>
         <td>{{ convertToLocalTime(item.date) }}</td>
-        <td>{{ item.amount }}</td>
+        <td>{{ item.amount/100 | currency: currency: 'symbol':'1.2-2':'fr' }}</td>
         <td>
             <ng-container *ngIf="item.type === 'crédit'">En Provenance de </ng-container>
             <ng-container *ngIf="item.type === 'débit'">A destination de </ng-container>
