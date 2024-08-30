@@ -18,7 +18,7 @@ import { LstTransactsComponent } from './lst-transacts/lst-transacts.component';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

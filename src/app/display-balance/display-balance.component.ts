@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AccessDbService } from '@app/services/access_db/access-db.service';
+import { ENVIRONNEMENT } from '@environments/environment';
 import { User } from '@app/models/user.model';
 
 @Component({
@@ -10,6 +11,7 @@ import { User } from '@app/models/user.model';
 export class DisplayBalanceComponent {
   @Input() userId:string;
   public initialBalance:number = 0;
+  public currency = ENVIRONNEMENT.currency;
 
   constructor(
     private accessDbService: AccessDbService,

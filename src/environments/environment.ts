@@ -9,6 +9,7 @@ export const ENVIRONNEMENT = {
   local: true,
   baseUrl: 'http://localhost:3000/',
   urls: URLS,
+  currency: 'EUR',
 };
 
 /*
