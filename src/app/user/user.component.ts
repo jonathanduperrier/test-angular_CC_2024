@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@app/services/auth/auth.service';
 import { jwtDecode } from "jwt-decode";
-
+import { EncryptService } from '@app/services/auth/encrypt.service';
 
 @Component({
   selector: 'app-user',
@@ -14,10 +14,10 @@ export class UserComponent {
   public objToken:any = [];
   public decodedToken:any = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private encrypt: EncryptService) {}
 
   ngOnInit() {
-    this.token = localStorage.getItem('token');
+    this.token = this.encrypt.decrypt(localStorage.getItem('token'));
     this.objToken = JSON.parse(this.token);
     this.decodedToken = jwtDecode(this.token);
     console.log("token : ");

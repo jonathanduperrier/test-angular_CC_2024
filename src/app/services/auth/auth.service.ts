@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { jwtDecode } from "jwt-decode";
+import { EncryptService } from './encrypt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() {}
+  constructor(private encrypt: EncryptService) {}
 
   isAuthenticated(): boolean {
-    const token = localStorage.getItem('token');
+    const token = this.encrypt.decrypt(localStorage.getItem('token'));
     console.log("token : ");
     console.log(token);
     // Ajoutez ici la logique pour vérifier la validité du token
@@ -34,7 +35,7 @@ export class AuthService {
   }
 
   login(token: string): void {
-    localStorage.setItem('token', token);
+    localStorage.setItem('token', this.encrypt.encrypt(token));
   }
 
   logout(): void {

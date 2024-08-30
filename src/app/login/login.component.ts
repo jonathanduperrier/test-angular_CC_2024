@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { EncryptService } from '@app/services/auth/encrypt.service';
 import { ENVIRONNEMENT } from '@environments/environment';
 import { PASSWORD } from '@app/core/constants/apps';
 
@@ -15,7 +16,7 @@ export class LoginComponent {
 
   readonly userPassword = PASSWORD;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private encrypt: EncryptService) {}
   signIn() {
     // Code pour se connecter et rediriger vers la page correspondant au composant UserComponent.
     const loginURL = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
@@ -30,8 +31,10 @@ export class LoginComponent {
         (returnValue) => {
           console.log("returnValue : ");
           console.log(returnValue);
-          localStorage.setItem('token', JSON.stringify(returnValue));
-          console.log(localStorage.getItem('token'));
+          localStorage.setItem('token', this.encrypt.encrypt(JSON.stringify(returnValue)));
+          //res.cookie('token', returnValue, { httpOnly: true, secure: true });
+
+          console.log(this.encrypt.decrypt((localStorage.getItem('token'))));
           this.router.navigate(['/user']);
         },
         (err) => alert('HTTP Error : ' + err.error)
