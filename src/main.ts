@@ -6,7 +6,6 @@ import { AppModule } from './app/app.module';
 
 registerLocaleData(localeFr, 'fr');
 
-
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
