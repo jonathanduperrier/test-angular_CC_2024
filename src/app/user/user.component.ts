@@ -4,6 +4,7 @@ import { AuthService } from '@app/services/auth/auth.service';
 import { jwtDecode } from "jwt-decode";
 import { DomSanitizer, SafeHtml, SafeScript } from '@angular/platform-browser';
 import { EncryptService } from '@app/services/auth/encrypt.service';
+import { AccessDbService } from '@app/services/access_db/access-db.service';
 
 @Component({
   selector: 'app-user',
@@ -19,9 +20,21 @@ export class UserComponent {
   public eMail:string = '';
   public SafeHtmlUserInfo!: SafeHtml;
 
-  constructor(private router: Router, private encrypt: EncryptService, private sanitizer: DomSanitizer) {}
+  userData: any;
+
+  constructor(
+    private router: Router, 
+    private encrypt: EncryptService, 
+    private sanitizer: DomSanitizer, 
+    private accessDbService: AccessDbService
+  ) {}
 
   ngOnInit() {
+    this.displayUserInfoFromToken();
+    this.displayBalance();
+  }
+
+  private displayUserInfoFromToken() {
     this.token = this.encrypt.decrypt(localStorage.getItem('token'));
     this.objToken = JSON.parse(this.token);
     this.decodedToken = jwtDecode(this.token);
@@ -40,7 +53,15 @@ export class UserComponent {
     </ul>');
   }
 
-  logout(): void {
+  private displayBalance() {
+    this.accessDbService.getData().subscribe(data => {
+      this.userData = data;
+      console.log("this.userData() : ");
+      console.log(this.userData);
+    });
+  }
+
+  public logout(): void {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
