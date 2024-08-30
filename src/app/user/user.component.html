@@ -2,7 +2,7 @@
 
 <div [innerHtml]="SafeHtmlUserInfo"></div>
 <h2>Solde</h2>
-
+<app-display-balance [userId]="userId"></app-display-balance>
 <h2>Liste des transactions</h2>
-
+<app-lst-transacts [userId]="userId"></app-lst-transacts>
 <div class="fr-btn" (click)="logout()"> Déconnexion </div>

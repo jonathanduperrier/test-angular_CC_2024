@@ -10,8 +10,8 @@ export class AccessDbService {
 
   constructor(private http: HttpClient) { }
 
-  public getData(): Observable<any[]>{
-    return this.http.get<any[]>(this.jsonUrl);
+  public getData(): Observable<any>{
+    return this.http.get<any>(this.jsonUrl);
   }
 
 }
