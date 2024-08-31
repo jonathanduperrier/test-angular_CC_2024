@@ -13,6 +13,8 @@ export class EncryptService {
     return CryptoJS.AES.encrypt(txt, this.key).toString();
   }
   public decrypt(txtToDecrypt: string) {
-    return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(CryptoJS.enc.Utf8);
+    if((txtToDecrypt !== null) && (txtToDecrypt !== undefined)){
+      return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(CryptoJS.enc.Utf8);
+    }
   }
 }

@@ -4,12 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { DisplayBalanceComponent } from './display-balance/display-balance.component';
 import { LstTransactsComponent } from './lst-transacts/lst-transacts.component';
 import { FormsModule } from '@angular/forms'; 
+import { ErrorInterceptorService } from './services/error.interceptor/error.interceptor.service';
 
 @NgModule({
   declarations: [AppComponent, UserComponent, LoginComponent, DisplayBalanceComponent, LstTransactsComponent],
@@ -20,7 +21,13 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [ ],
+  providers: [ 
+    {   
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

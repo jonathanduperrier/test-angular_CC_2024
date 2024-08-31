@@ -31,12 +31,12 @@ export class LoginComponent {
         (returnValue) => {
           localStorage.setItem('token', this.encrypt.encrypt(JSON.stringify(returnValue)));
           this.router.navigate(['/user']);
-        },
-        (err) => alert('HTTP Error : ' + err.error)
+        }
       );
   }
 
   register() {
     // Code pour créer un nouvel utilisateur
+
   }
 }
