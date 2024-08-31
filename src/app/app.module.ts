@@ -11,9 +11,10 @@ import { DisplayBalanceComponent } from './display-balance/display-balance.compo
 import { LstTransactsComponent } from './lst-transacts/lst-transacts.component';
 import { FormsModule } from '@angular/forms'; 
 import { ErrorInterceptorService } from './services/error.interceptor/error.interceptor.service';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, LoginComponent, DisplayBalanceComponent, LstTransactsComponent],
+  declarations: [AppComponent, UserComponent, LoginComponent, DisplayBalanceComponent, LstTransactsComponent, CreateUserComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { EncryptService } from '@app/services/auth/encrypt.service';
 import { ENVIRONNEMENT } from '@environments/environment';
 import { PASSWORD } from '@app/core/constants/apps';
+import { AccessDbService } from '@app/services/access_db/access-db.service';
 
 @Component({
   selector: 'app-login',
@@ -17,13 +18,12 @@ export class LoginComponent {
   readonly userPassword = PASSWORD;
 
   constructor(private http: HttpClient, private router: Router, private encrypt: EncryptService) {}
-  signIn() {
+  public signIn(): void {
     // Code pour se connecter et rediriger vers la page correspondant au composant UserComponent.
-    const loginURL = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
+    let loginURL:string = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
     console.log('Clic sur le bouton de connexion');
 
-    this.http
-      .post(loginURL, {
+    this.http.post(loginURL, {
         email: this.emailInput.nativeElement.value,
         password: this.passwordInput.nativeElement.value,
       })
@@ -35,8 +35,7 @@ export class LoginComponent {
       );
   }
 
-  register() {
-    // Code pour créer un nouvel utilisateur
-
+  public register(): void {
+    this.router.navigate(['/create-user']);
   }
 }

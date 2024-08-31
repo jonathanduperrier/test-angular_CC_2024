@@ -8,8 +8,8 @@ import { User } from '@app/models/user.model';
   providedIn: 'root'
 })
 export class AccessDbService {
-  private jsonUrl = 'assets/db.json';
-  private userUrl = ENVIRONNEMENT.baseUrl + 'users';
+  private jsonUrl:string = 'assets/db.json';
+  private userUrl:string = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.users;
 
   constructor(private http: HttpClient) { }
 

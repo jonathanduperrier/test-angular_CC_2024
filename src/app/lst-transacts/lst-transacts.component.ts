@@ -1,3 +1,4 @@
+/* Compossant affichant la liste des transactions */
 import { Component, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AccessDbService } from '@app/services/access_db/access-db.service';
@@ -82,7 +83,7 @@ export class LstTransactsComponent {
     this.filteredList = this.lstTransactsDisplay.filter(item => {
       return item.type.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
              item.first.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-             item.first.toLowerCase().includes(this.searchTerm.toLowerCase());
+             item.last.toLowerCase().includes(this.searchTerm.toLowerCase());
     });
     this.applySort();
   }

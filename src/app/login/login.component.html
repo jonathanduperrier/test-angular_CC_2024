@@ -6,18 +6,18 @@
     }}</em>"
   </h2>
   <form id="formAuth">
-    <p>
+    <div class="form-group">
       <label class="fr-label" for="email">E-Mail : </label>
       <input class="fr-input" #email id="email" placeholder="Email" type="text" />
-    </p>
-    <p>
+    </div>
+    <div class="form-group">
       <label class="fr-label" for="password">Mot de passe : </label>
       <input class="fr-input" #password id="password" placeholder="Mot de passe" type="password" />
-    </p>
+    </div>
   </form>
 
-  <p>
+  <div id="buttons">
     <button class="fr-btn" (click)="signIn()" [routerLink]="['/user']">Se connecter</button>&nbsp;
     <button class="fr-btn" (click)="register()">Créer un compte</button>
-  </p>
+  </div>
 </main>

@@ -1,7 +1,11 @@
 <main class="fr-container">
     <h1>Informations de l'utilisateur</h1>
-    <div [innerHtml]="SafeHtmlUserInfo"></div>
+    <div id="userInfoGroup">
+        <div id="btnDisconnect">
+            <div class="fr-btn" (click)="logout()"> Déconnexion </div>
+        </div>
+        <div [innerHtml]="SafeHtmlUserInfo" id="userInfo"></div>
+    </div>
     <app-lst-transacts [userId]="userId"></app-lst-transacts>
     <app-display-balance [userId]="userId"></app-display-balance>
-    <div class="fr-btn" (click)="logout()"> Déconnexion </div>
 </main>
