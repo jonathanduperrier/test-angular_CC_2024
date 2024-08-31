@@ -107,6 +107,23 @@
       "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "April 11, 2023",
       "initial_balance": "462279"
+    },
+    {
+      "email": "hhhh@kfkfk.fr",
+      "password": "$2a$10$HxRNPvYXyU3AfaAZRinxx.ZKukor9gKQYr3xTMjJhn2mOt3DL5ByG",
+      "first": "oaoa01",
+      "last": "toto01",
+      "initial_balance": "1000",
+      "id": 13
+    },
+    {
+      "email": "usertest01@toto.com",
+      "password": "$2a$10$rOmP6wHOypSwuAYZDg8x2utQMVnVqU1CQAFq/lPT4IQpcsOuQ/i/i",
+      "first": "test01",
+      "last": "user01",
+      "created": "August 31, 2024",
+      "initial_balance": 100000,
+      "id": 14
     }
   ],
   "transactions": [

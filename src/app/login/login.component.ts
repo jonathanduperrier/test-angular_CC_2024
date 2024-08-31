@@ -1,8 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { EncryptService } from '@app/services/auth/encrypt.service';
-import { ENVIRONNEMENT } from '@environments/environment';
 import { PASSWORD } from '@app/core/constants/apps';
 import { AccessDbService } from '@app/services/access_db/access-db.service';
 
@@ -17,22 +14,18 @@ export class LoginComponent {
 
   readonly userPassword = PASSWORD;
 
-  constructor(private http: HttpClient, private router: Router, private encrypt: EncryptService) {}
+  constructor(
+    private router: Router,
+    private accessDbService: AccessDbService,
+  ) {}
   public signIn(): void {
     // Code pour se connecter et rediriger vers la page correspondant au composant UserComponent.
-    let loginURL:string = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
+    let user:any = {
+      email: this.emailInput.nativeElement.value,
+      password: this.passwordInput.nativeElement.value,
+    };
     console.log('Clic sur le bouton de connexion');
-
-    this.http.post(loginURL, {
-        email: this.emailInput.nativeElement.value,
-        password: this.passwordInput.nativeElement.value,
-      })
-      .subscribe(
-        (returnValue) => {
-          localStorage.setItem('token', this.encrypt.encrypt(JSON.stringify(returnValue)));
-          this.router.navigate(['/user']);
-        }
-      );
+    this.accessDbService.loginUser(user);
   }
 
   public register(): void {
