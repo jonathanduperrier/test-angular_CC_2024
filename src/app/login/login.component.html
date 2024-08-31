@@ -1,23 +1,23 @@
-<h1>Page d'authentification</h1>
-<h2>
-  Le mot de passe pour les utilisateurs déjà existants en base est "<em>{{
-    userPassword
-  }}</em>"
-</h2>
-<div>
-  <p>
-    <label class="fr-label" for="email">E-Mail : </label>
-    <input class="fr-input" #email id="email" placeholder="Email" type="text" />
-  </p>
-  <p>
-    <label class="fr-label" for="password">Mot de passe : </label>
-    <input class="fr-input" #password id="password" placeholder="Mot de passe" type="password" />
-  </p>
-</div>
+<main class="fr-container">
+  <h1>Page d'authentification</h1>
+  <h2>
+    Le mot de passe pour les utilisateurs déjà existants en base est "<em>{{
+      userPassword
+    }}</em>"
+  </h2>
+  <form id="formAuth">
+    <p>
+      <label class="fr-label" for="email">E-Mail : </label>
+      <input class="fr-input" #email id="email" placeholder="Email" type="text" />
+    </p>
+    <p>
+      <label class="fr-label" for="password">Mot de passe : </label>
+      <input class="fr-input" #password id="password" placeholder="Mot de passe" type="password" />
+    </p>
+  </form>
 
-<p>
-  <button class="fr-btn" (click)="signIn()" [routerLink]="['/user']">Se connecter</button>
-</p>
-<p>
-  <button class="fr-btn" (click)="register()">Créer un compte</button>
-</p>
+  <p>
+    <button class="fr-btn" (click)="signIn()" [routerLink]="['/user']">Se connecter</button>&nbsp;
+    <button class="fr-btn" (click)="register()">Créer un compte</button>
+  </p>
+</main>

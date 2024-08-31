@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '@app/services/auth/auth.service';
 import { jwtDecode } from "jwt-decode";
 import { DomSanitizer, SafeHtml, SafeScript } from '@angular/platform-browser';
 import { EncryptService } from '@app/services/auth/encrypt.service';

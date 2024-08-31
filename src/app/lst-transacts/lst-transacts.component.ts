@@ -7,7 +7,6 @@ import { TransactDisplay } from '@app/models/transactsDisplay.model';
 import { format, toZonedTime } from 'date-fns-tz';
 import { fr } from 'date-fns/locale/fr';
 
-
 @Component({
   selector: 'app-lst-transacts',
   templateUrl: './lst-transacts.component.html',
