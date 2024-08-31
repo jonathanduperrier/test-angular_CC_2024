@@ -23,9 +23,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let item of lstTransactsDisplay">
+        <tr *ngFor="let item of paginatedList">
             <td>{{ item.type }}</td>
-            <td>{{item.date}} {{ convertToLocalTime(item.date) }}</td>
+            <td>{{ convertToLocalTime(item.date) }}</td>
             <td>{{ item.amount/100 | currency: currency: 'symbol':'1.2-2':'fr' }}</td>
             <td>
                 <ng-container *ngIf="item.type === 'crédit'">En Provenance de </ng-container>

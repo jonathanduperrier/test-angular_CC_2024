@@ -35,9 +35,6 @@ export class LstTransactsComponent {
   
   ngOnInit() {
     this.displayTransacts();
-    console.log(this.lstTransactsDisplay);
-    this.applyFilter();
-    //this.paginatedList = this.lstTransactsDisplay;
   }
 
   ngOnDestroy() {
@@ -56,6 +53,7 @@ export class LstTransactsComponent {
         let userDestination:User = data.users.find(i => i.id === td.toUserId);
         this.lstTransactsDisplay.push({"id":td.id,"type":"crédit", "amount": td.amount, "date": td.date, "first": userDestination.first, "last": userDestination.last});
       });
+      this.applyFilter(); // Cela va initialiser filteredList et paginatedList. On l'execute ici pour éviter les problemes lié aux asynchrone.
     });
   }
 
@@ -81,13 +79,7 @@ export class LstTransactsComponent {
   }
 
   /* Fonctions de gestion de la pagination */
-  public applyFilter(event?: Event): void {
-    /*if (event) {
-      const inputElement = event.target as HTMLInputElement;
-      this.searchTerm = inputElement.value;
-    } else {
-      this.searchTerm = 'Herminia';
-    }*/
+  public applyFilter(): void {
     this.filteredList = this.lstTransactsDisplay.filter(item => {
       return item.type.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
              item.first.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
