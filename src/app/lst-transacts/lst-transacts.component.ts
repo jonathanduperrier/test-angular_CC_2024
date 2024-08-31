@@ -35,8 +35,9 @@ export class LstTransactsComponent {
   
   ngOnInit() {
     this.displayTransacts();
-    //this.applyFilter();
-    this.paginatedList = this.lstTransactsDisplay;
+    console.log(this.lstTransactsDisplay);
+    this.applyFilter();
+    //this.paginatedList = this.lstTransactsDisplay;
   }
 
   ngOnDestroy() {
@@ -69,14 +70,24 @@ export class LstTransactsComponent {
   }
 
   public convertToLocalTime(dateString: string): string {
+    if(dateString.length === 23){
+      dateString = (dateString.substring(0,19) + 'Z');
+    }
     const date = new Date(dateString);
     const timeZone = ENVIRONNEMENT.timeZone;
     const zonedDate = toZonedTime(date, timeZone);
-    return format(zonedDate, 'EEEE d MMMM yyyy à HH:mm', { timeZone, locale: fr });
+    const isoString = zonedDate.toISOString().replace(/\.\d{3}Z$/, 'Z'); // Assure un format valide
+    return format(new Date(isoString), 'EEEE d MMMM yyyy à HH:mm', { timeZone, locale: fr });
   }
 
   /* Fonctions de gestion de la pagination */
-  public applyFilter(): void {
+  public applyFilter(event?: Event): void {
+    /*if (event) {
+      const inputElement = event.target as HTMLInputElement;
+      this.searchTerm = inputElement.value;
+    } else {
+      this.searchTerm = 'Herminia';
+    }*/
     this.filteredList = this.lstTransactsDisplay.filter(item => {
       return item.type.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
              item.first.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
