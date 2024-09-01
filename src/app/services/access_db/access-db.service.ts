@@ -41,5 +41,13 @@ export class AccessDbService {
       }
     );
   }
+
+  public addTransact(transact:any){
+    return this.http.post<any>(this.transactionsUrl, transact).subscribe(
+      (returnValue) => {
+        this.router.navigate(['/user']);
+      }
+    );
+  }
   
 }

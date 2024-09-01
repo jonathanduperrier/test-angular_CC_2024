@@ -1,8 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { jwtDecode } from "jwt-decode";
+import { Subscription } from 'rxjs';
 import { AccessDbService } from '@app/services/access_db/access-db.service';
 import { EncryptService } from '@app/services/auth/encrypt.service';
+import { User } from '@app/models/user.model';
 
 @Component({
   selector: 'app-new-transact',
@@ -12,13 +14,14 @@ import { EncryptService } from '@app/services/auth/encrypt.service';
 export class NewTransactComponent {
   @ViewChild('email') emailInput!: ElementRef;
   @ViewChild('amount') amountInput!: ElementRef;
-
+  private selectedData: Subscription;
   public token:string = '';
   public objToken:any = [];
   public decodedToken:any = [];
   public userId:string = '';
   public eMail:string = '';
   public balance:number = 0;
+  private destUserId:number = 0;
 
   constructor(
     private router: Router,
@@ -32,17 +35,36 @@ export class NewTransactComponent {
     this.decodedToken = jwtDecode(this.token);
     this.userId = this.objToken.user.id;
     this.eMail = this.decodedToken.email;
+  }
 
+  ngOnDestroy() {
+    this.selectedData.unsubscribe();
   }
 
   public newTransact(): void {
     if((this.verifyEmail(this.emailInput.nativeElement.value)) && (this.verifyAmountBalance(this.amountInput.nativeElement.value, this.balance))){
-      console.log("newTransact");
+      console.log("*** newTransact ***");
       console.log("email utilisateur : " + this.eMail);
       console.log("email destinataire : " + this.emailInput.nativeElement.value);
       console.log("montant transaction : " + this.amountInput.nativeElement.value);
       console.log("solde : " + this.balance/100);
-      
+      console.log(this.getDateHoursTransact());
+      this.selectedData = this.accessDbService.getData().subscribe(data => {
+        let destUser:User = data.users.find(i => i.email === this.emailInput.nativeElement.value);
+        ((destUser !== null) && (destUser !== undefined)) ? (this.destUserId = destUser.id) : (this.destUserId = 0);
+        if(this.destUserId === 0){
+          alert("utilisateur inconnu");
+        } else {
+          console.log("user destination id : " + this.destUserId);
+          if(window.confirm("Souhaitez-vous vraiment confirmer cette transaction d'un montant de " + this.amountInput.nativeElement.value + "?")){
+            console.log("*** transaction confirmée ***");
+          } else {
+            alert("La transaction est annulée.");
+            this.router.navigate(['/user']);
+            console.log("*** transaction annulée ***");
+          }
+        }
+      });
     }
   }
 
@@ -65,6 +87,11 @@ export class NewTransactComponent {
 
   public getBalance(bal:number){
     this.balance = bal;
+  }
+
+  private getDateHoursTransact(): string {
+    const dateHours = new Date();
+    return dateHours.toISOString();
   }
 
   public cancel(): void {
