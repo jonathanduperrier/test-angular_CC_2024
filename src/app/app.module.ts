@@ -11,6 +11,7 @@ import { DisplayBalanceComponent } from './display-balance/display-balance.compo
 import { LstTransactsComponent } from './lst-transacts/lst-transacts.component';
 import { FormsModule } from '@angular/forms'; 
 import { ErrorInterceptorService } from './services/error.interceptor/error.interceptor.service';
+import { AuthInterceptorService } from './services/auth.interceptor/auth.interceptor.service';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { NewTransactComponent } from './new-transact/new-transact.component';
 
@@ -24,11 +25,8 @@ import { NewTransactComponent } from './new-transact/new-transact.component';
     FormsModule,
   ],
   providers: [ 
-    {   
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptorService,
-      multi: true
-    }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent],
 })

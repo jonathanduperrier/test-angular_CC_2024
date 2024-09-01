@@ -177,6 +177,13 @@
       "toUserId": 2,
       "amount": 41000,
       "date": "2024-06-25T20:35:18:00Z"
+    },
+    {
+      "fromUserId": 15,
+      "toUserId": 13,
+      "amount": 500,
+      "date": "2024-09-01T17:05:16Z",
+      "id": 7
     }
   ]
 }

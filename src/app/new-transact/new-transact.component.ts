@@ -51,7 +51,7 @@ export class NewTransactComponent {
         if(this.destUserId === 0){
           alert("utilisateur inconnu");
         } else {
-          if(window.confirm("Souhaitez-vous vraiment confirmer cette transaction d'un montant de " + this.amountInput.nativeElement.value + "?")){
+          if(window.confirm("Souhaitez-vous vraiment confirmer cette transaction d'un montant de " + this.amountInput.nativeElement.value + " € ?")){
             console.log("*** transaction confirmée ***");
             let transact:any = {
               fromUserId: this.userId,
