@@ -1,11 +1,18 @@
 <main class="fr-container">
     <h1>Informations de l'utilisateur</h1>
-    <div id="userInfoGroup">
+    <header id="userInfoGroup">
         <div id="btnDisconnect">
-            <div class="fr-btn" (click)="logout()"> Déconnexion </div>
+            <button class="fr-btn" (click)="newTransact()">
+                Nouvelle Transaction &nbsp;
+                <span class="fr-icon-money-euro-circle-line" aria-hidden="true"></span>
+            </button><br />
+            <button class="fr-btn" (click)="logout()">
+                Déconnexion &nbsp;
+                <span class="fr-icon-logout-box-r-line" aria-hidden="true"></span>
+            </button>
         </div>
         <div [innerHtml]="SafeHtmlUserInfo" id="userInfo"></div>
-    </div>
+    </header>
     <app-lst-transacts [userId]="userId"></app-lst-transacts>
     <app-display-balance [userId]="userId"></app-display-balance>
 </main>

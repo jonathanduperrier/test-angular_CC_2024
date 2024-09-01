@@ -51,6 +51,10 @@ export class UserComponent {
     </ul>');
   }
 
+  public newTransact(): void {
+    console.log("nouvelle transaction");
+  }
+
   public logout(): void {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
