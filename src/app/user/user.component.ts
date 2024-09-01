@@ -52,7 +52,7 @@ export class UserComponent {
   }
 
   public newTransact(): void {
-    console.log("nouvelle transaction");
+    this.router.navigate(['/user/newtransact']);
   }
 
   public logout(): void {

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AccessDbService } from '@app/services/access_db/access-db.service';
 import { ENVIRONNEMENT } from '@environments/environment';
@@ -12,6 +12,7 @@ import { User } from '@app/models/user.model';
 export class DisplayBalanceComponent {
   private selectedData: Subscription;
   @Input() userId:string;
+  @Output() returnCalculatedBalance:EventEmitter<number> = new EventEmitter();
   public currency = ENVIRONNEMENT.currency;
   public initialBalance:number = 0;
   public calculatedBalance:number = 0;
@@ -33,6 +34,7 @@ export class DisplayBalanceComponent {
       let currentUser:User = data.users.find(i => i.id === this.userId);
       this.initialBalance = Number(currentUser.initial_balance);
       this.calculatedBalance = this.calculateBalance(this.initialBalance, data.transactions);
+      this.returnCalculatedBalance.emit(this.calculatedBalance);
     });
   }
 

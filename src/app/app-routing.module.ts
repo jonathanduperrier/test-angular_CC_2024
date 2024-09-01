@@ -4,6 +4,8 @@ import { authGuard } from './services/auth/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { DisplayBalanceComponent } from './display-balance/display-balance.component';
+import { NewTransactComponent } from './new-transact/new-transact.component';
 
 const routes: Routes = [
   {
@@ -22,9 +24,13 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserComponent,
-    canActivate: [authGuard] 
+    canActivate: [authGuard]
+  },
+  {
+    path: 'user/newtransact',
+    component: NewTransactComponent,
+    canActivate: [authGuard]
   }
-
 ];
 
 @NgModule({

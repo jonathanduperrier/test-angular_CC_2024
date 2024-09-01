@@ -13,6 +13,7 @@ export class AccessDbService {
   private jsonUrl:string = 'assets/db.json';
   private loginURL:string = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
   private registerUrl:string = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.register;
+  private transactionsUrl:string = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.transactions;
 
   constructor(
     private http: HttpClient,

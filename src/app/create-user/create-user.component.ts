@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { first } from 'rxjs';
 import { AccessDbService } from '@app/services/access_db/access-db.service';
 
 @Component({
