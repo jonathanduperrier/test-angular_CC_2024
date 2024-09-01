@@ -124,6 +124,15 @@
       "created": "August 31, 2024",
       "initial_balance": 100000,
       "id": 14
+    },
+    {
+      "email": "usertest02@toto.com",
+      "password": "$2a$10$k14HJq74tJdKX5w/wPU/wuZsf8Z5t7MHcMapEN59EZHPrb/Zksu3C",
+      "first": "user02",
+      "last": "test02",
+      "created": "September 1, 2024",
+      "initial_balance": 1000,
+      "id": 15
     }
   ],
   "transactions": [

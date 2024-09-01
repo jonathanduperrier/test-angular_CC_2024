@@ -38,7 +38,9 @@ export class LstTransactsComponent {
   }
 
   ngOnDestroy() {
-    this.selectedData.unsubscribe();
+    if(this.selectedData){
+      this.selectedData.unsubscribe();
+    }
   }
 
   private displayTransacts() {

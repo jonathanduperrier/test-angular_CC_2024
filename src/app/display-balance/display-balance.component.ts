@@ -26,7 +26,9 @@ export class DisplayBalanceComponent {
   }
 
   ngOnDestroy() {
-    this.selectedData.unsubscribe();
+    if(this.selectedData){
+      this.selectedData.unsubscribe();
+    }
   }
 
   private displayBalance():void {

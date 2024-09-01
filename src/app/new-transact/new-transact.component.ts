@@ -38,30 +38,31 @@ export class NewTransactComponent {
   }
 
   ngOnDestroy() {
-    this.selectedData.unsubscribe();
+    if(this.selectedData){
+      this.selectedData.unsubscribe();
+    }
   }
 
   public newTransact(): void {
     if((this.verifyEmail(this.emailInput.nativeElement.value)) && (this.verifyAmountBalance(this.amountInput.nativeElement.value, this.balance))){
-      console.log("*** newTransact ***");
-      console.log("email utilisateur : " + this.eMail);
-      console.log("email destinataire : " + this.emailInput.nativeElement.value);
-      console.log("montant transaction : " + this.amountInput.nativeElement.value);
-      console.log("solde : " + this.balance/100);
-      console.log(this.getDateHoursTransact());
       this.selectedData = this.accessDbService.getData().subscribe(data => {
         let destUser:User = data.users.find(i => i.email === this.emailInput.nativeElement.value);
         ((destUser !== null) && (destUser !== undefined)) ? (this.destUserId = destUser.id) : (this.destUserId = 0);
         if(this.destUserId === 0){
           alert("utilisateur inconnu");
         } else {
-          console.log("user destination id : " + this.destUserId);
           if(window.confirm("Souhaitez-vous vraiment confirmer cette transaction d'un montant de " + this.amountInput.nativeElement.value + "?")){
             console.log("*** transaction confirmée ***");
+            let transact:any = {
+              fromUserId: this.userId,
+              toUserId: this.destUserId,
+              amount: (this.amountInput.nativeElement.value * 100),
+              date: this.getDateHoursTransact(),
+            };
+            this.accessDbService.addTransact(transact);
           } else {
             alert("La transaction est annulée.");
             this.router.navigate(['/user']);
-            console.log("*** transaction annulée ***");
           }
         }
       });
@@ -90,8 +91,14 @@ export class NewTransactComponent {
   }
 
   private getDateHoursTransact(): string {
-    const dateHours = new Date();
-    return dateHours.toISOString();
+    let dateHours = new Date();
+    let annee = dateHours.getUTCFullYear();
+    let mois = String(dateHours.getUTCMonth() + 1).padStart(2, '0'); // Les mois commencent à 0
+    let jour = String(dateHours.getUTCDate()).padStart(2, '0');
+    let heures = String(dateHours.getUTCHours()).padStart(2, '0');
+    let minutes = String(dateHours.getUTCMinutes()).padStart(2, '0');
+    let secondes = String(dateHours.getUTCSeconds()).padStart(2, '0');
+    return `${annee}-${mois}-${jour}T${heures}:${minutes}:${secondes}Z`;
   }
 
   public cancel(): void {
