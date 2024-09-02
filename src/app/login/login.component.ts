@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { PASSWORD } from '@app/core/constants/apps';
 import { AccessDbService } from '@app/services/access_db/access-db.service';
 

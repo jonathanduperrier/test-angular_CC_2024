@@ -10,7 +10,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "api": "json-server ./src/assets/db.json -m ./node_modules/json-server-auth -r routes.json",
-    "start": "concurrently \"npm run api\" \"npm run serve\""
+    "start": "concurrently \"npm run api\" \"npm run serve\"",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

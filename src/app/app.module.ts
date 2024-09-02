@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +26,8 @@ import { NewTransactComponent } from './new-transact/new-transact.component';
   ],
   providers: [ 
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+    { provide: LOCALE_ID, useValue: 'fr' }
   ],
   bootstrap: [AppComponent],
 })

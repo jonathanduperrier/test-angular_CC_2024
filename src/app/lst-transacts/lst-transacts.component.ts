@@ -70,7 +70,7 @@ export class LstTransactsComponent {
   }
 
   public convertToLocalTime(dateString: string): string {
-    if(dateString.length === 23){
+    if(dateString.length > 20){
       dateString = (dateString.substring(0,19) + 'Z');
     }
     const date = new Date(dateString);
@@ -134,5 +134,4 @@ export class LstTransactsComponent {
   get totalPages(): number {
     return Math.ceil(this.filteredList.length / this.itemsPerPage);
   }
-
 }

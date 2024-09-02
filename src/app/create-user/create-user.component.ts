@@ -31,13 +31,15 @@ export class CreateUserComponent {
         password: this.passwordInput.nativeElement.value,
       }
       this.accessDbService.addUser(user);
+    } else {
+      alert('Veuillez entrer une adresse email valide.');
     }
   }
 
   private verifyEmail(email:string): boolean {
     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!emailPattern.test(email)) {
-      alert('Veuillez entrer une adresse email valide.');
+      //alert('Veuillez entrer une adresse email valide.');
       return false;
     }
     return true;
